@@ -7,8 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 namespace LAB_1_API.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class peliculasController : ControllerBase
     {
         [HttpGet]
@@ -20,10 +18,15 @@ namespace LAB_1_API.Controllers
             var json = JsonConvert.SerializeObject(peli);
             return json;
         }
+        //[HttpPost]
+        //public void llenado(string name, int date, string manager)
+        //{
+        //    Estructuras.Almacenamiento.Instance.llenado_pila(name, date, manager);
+        //}
         [HttpPost]
-        public void llenado(string name, int date, string manager)
+        public void post([FromBody] object info)
         {
-            Estructuras.Almacenamiento.Instance.llenado_pila(name, date, manager);
+           
         }
     }
 }
