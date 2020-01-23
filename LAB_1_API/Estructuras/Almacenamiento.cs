@@ -30,11 +30,24 @@ namespace LAB_1_API.Estructuras
         }
         public List<Peliculas> mostrar()
         {
-            if (listado.Count > 10)
+ 
+            if (listado != null)
             {
-                for (int i = 0; i < 10; i++)
+                if (listado.Count > 10)
                 {
-                    nuevalista.Add(listado.Pop());
+                    for (int i = 0; i < 10; i++)
+                    {
+                        nuevalista.Add(listado.Pop());
+                       
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < listado.Count; i++)
+                    {
+                        nuevalista.Add(listado.Pop());
+                      
+                    }
                 }
             }
             else
